@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container-fluid,
+.row {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+
+#main {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+}
+
+#sikkText p span {
+    font-family: 'Bakbak One', cursive;
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+#sikkText p {
+    font-size: 3rem;
+    font-family: 'Gugi', cursive;
+    color: white;
+    line-height: 2.5rem;
+}
+
+#sikkText {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(-50%, 25%);
+    margin: 0px auto;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0px auto;
+}
+
+#imgContent {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    position: relative;
+
+}
+
+#kep1,
+#kep2,
+#kep3,
+#kep4{
+    width:480px;
+    height:580px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translate(-100%,-100% );
+    overflow: hidden;
+}
+
+#kep1 img,
+#kep2 img,
+#kep3 img,
+#kep4 img{
+    position: relative;
+    top: -50px;
+    left: -50px;
+}
