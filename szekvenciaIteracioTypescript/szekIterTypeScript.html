@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szekvencia és Iterációs Typescript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div class="container-fluid" id="main">
+        <div class="row">
+            <div id ="leftSection" class="col-md-5 col-sm-12">
+                <h5 class="text-center">TYPESCRIPT Kód</h5>
+                <div id="kod" class="mt-3">
+                    <pre id="kodsorok" style="text-overflow: clip;"></pre>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                    <h5 class="text-center mt-1">FELADATOK</h5>
+                    <div id="radios">
+                        <table id="radiosTable" class="table mt-4 ">
+                        
+                            <tr>
+                                <td style="padding-top:15px">
+                                    <form-group class="form-group">
+                                        <input type="radio" id="erdemjegy" name="typescriptKodok" value="erdemjegy">
+                                        <label for="erdemjegy" class="">Érdemjegyek</label>
+                                    </form-group>
+                                </td>
+                                <td style="padding-top:15px">
+                                    <form-group class="form-group">
+                                        <input type="radio" id="haromszog" name="typescriptKodok" value="haromszog">
+                                        <label for="haromszog" class="">Szerkeszthető háromszög</label>
+                                    </form-group>
+                                </td>
+
+                                <td style="padding-top:15px">
+                                    <form-group class="form-group">
+                                        <input type="radio" id="ossz" name="typescriptKodok" value="ossz">
+                                        <label for="ossz" class="">Összegzés tétele</label>
+                                    </form-group>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <form-group class="form-group">
+                                        <input type="radio" id="masodfoku" name="typescriptKodok" value="masodfoku">
+                                        <label for="masodfoku" class="">Másodfokú egyenlet</label>
+                                    </form-group>
+                                </td>
+                                <td>
+                                    <form-group class="form-group">
+                                        <input type="radio" id="sorozatok" name="typescriptKodok" value="sorozatok">
+                                        <label for="sorozatok" class="">Számtani, mértani sor</label>
+                                    </form-group>
+                                </td>
+                                <td>
+                                    <form-group class="form-group">
+                                        <input type="radio" id="atlag" name="typescriptKodok" value="atlag">
+                                        <label for="atlag" class="">Átlagszámítás tétele</label>
+                                    </form-group>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <form-group class="form-group">
+                                        <input type="radio" id="lnko" name="typescriptKodok" value="lnko">
+                                        <label for="lnko" class="">Legnagyobb közös osztó</label>
+                                    </form-group>
+                                </td>
+                                <td>
+                                    <form-group class="form-group">
+                                        <input type="radio" id="paros" name="typescriptKodok" value="paros">
+                                        <label for="paros" class="">Párosszám generátor</label>
+                                    </form-group>
+                                </td>
+
+                                <td>
+                                    <form-group class="form-group">
+                                        <input type="radio" id="db" name="typescriptKodok" value="db">
+                                        <label for="db" class="">Megszámlálás tétele (páros számok)</label>
+                                    </form-group>
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <form-group class="form-group">
+                                        <input type="radio" id="lkkt" name="typescriptKodok" value="lkkt">
+                                        <label for="lkkt" class="">Legkisebb közös többszörös</label>
+                                    </form-group>
+                                </td>
+                                <td>
+                                    <form-group class="form-group">
+                                        <input type="radio" id="prim" name="typescriptKodok" value="prim">
+                                        <label for="prim" class="">Prím szám</label>
+                                    </form-group>
+                                </td>
+
+                                <td>
+                                    <form-group class="form-group">
+                                        <input type="radio" id="kivalaszt" name="typescriptKodok" value="kivalaszt">
+                                        <label for="kivalaszt" class="">Kiválasztás tétele (páros számok)</label>
+                                    </form-group>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom:15px">
+                                    <form-group class="form-group">
+                                        <input type="radio" id="koordinata" name="typescriptKodok" value="koordinata">
+                                        <label for="koordinata" class="">Szám koordináta negyed</label>
+                                    </form-group>
+                                </td>
+                                <td style="padding-bottom:15px">
+                                    <form-group class="form-group">
+                                        <input type="radio" id="rprim" name="typescriptKodok" value="rprim">
+                                        <label for="rprim" class="">Relatív prím</label>
+                                    </form-group>
+                                </td>
+                                <td style="padding-bottom:15px">
+                                    <form-group class="form-group">
+                                        <input type="radio" id="minMax" name="typescriptKodok" value="minMax">
+                                        <label for="minMax" class="">Min/Max keresés</label>
+                                    </form-group>
+                                </td>
+                            </tr>
+                          
+                        </table>
+                    </div>
+
+                    <div id="section" class="mt-2">
+                        <h5 class="text-center mt-5">TESZT ESETEK</h5>
+                        <div id="examples" class="mt-2">
+                            <table id="testTable" class="table text-center">
+                                <tr>
+                                    <th>Példa teszteset:</th>
+                                    <th>Eredménye:</th>
+                                </tr>
+                                <tr>
+                                    <td><p id="pelda"></p></td>
+                                    <td><p id="pRes"></p></td>
+                                </tr>                                
+                            </table>
+                            <p id="egyeni">Egyéni tesztesethez hívja meg a példa szerint a <span id="peldaFgv"></span> függvényt!
+                            </p>
+                            <p id="beirtTest"><span id="fgv"></span> ( <span id="parameters"></span>)</p>       
+                            <button id="run" class="btn btn-primary">Futtat</button>
+                        </div>
+                        <h5 class="text-center mt-3">EREDMÉNYEK</h5>
+                        <div class="mt-2">
+                            <p id="results"></p>
+                        </div>
+                    </div>                
+            </div>
+        </div>
+        <script src="./szekIterTypeScript.js" type="module">
+
+        </script>
+            
+
+</html>

@@ -1,0 +1,403 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+@keyframes tipsAnimate {
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+#main {
+
+    background-image: url("../img/mainbg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+
+}
+
+.text-right {
+    width: 20rem;
+    color: white;
+    rotate: 45deg;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.4rem;
+    text-align: right;
+    position: absolute;
+    top: 50%;
+    transform: translate(-25%, -175%);
+
+}
+
+.text-right span {
+    font-size: 2rem;
+    color: rgba(236, 196, 17, 0.8);
+}
+
+.divider {
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 20px solid rgba(236, 196, 17, 0.5);
+    border-radius: 10px;
+    box-shadow: 0px 0px 200px rgb(236, 196, 17);
+
+}
+
+#gamerTextContainer {
+    height: 100vh;
+
+}
+
+
+#gamerTri {
+
+    height: 0px;
+    width: 0px;
+    border-left: 325px solid rgba(255, 255, 255, 0.2);
+    border-top: 325px solid transparent;
+    border-bottom: 325px solid transparent;
+    position: relative;
+    top: 50%;
+    transform: translate(0px, -50%);
+    box-sizing: border-box;
+}
+
+#gamerTriLogo {
+    font-size: 7rem;
+    color: rgb(89, 216, 255);
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translate(0px, -50%);
+
+}
+
+#dots {
+    display: inline-block;
+    font-size: 5rem;
+    color: rgba(236, 196, 17, 0.8);
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translate(255%, -35%);
+}
+
+
+#tips {
+    font-family: Calibri, Arial;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0px 0px 20px rgb(252, 251, 249);
+    font-weight: bold;
+    position: absolute;
+    top: 65%;
+    left: 29%;
+}
+
+#tips::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-image: url("../img/tipicon.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+#tipsContainer a p {
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(0px, -50%);
+}
+
+#tipsButtonLeft p {
+    position: absolute;
+    left: 15%;
+
+}
+
+#tipsButtonRight p {
+    position: absolute;
+    right: 5%;
+
+}
+
+#tipsButtonLeft {
+    height: 70px;
+    width: 270px;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-image: url("../img/beginner.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    display: inline-block;
+    border-radius: 10px;
+    clip-path: polygon(75% 0, 100% 0, 100% 100%, 75% 100%);
+    position: absolute;
+    left: 35%;
+    transform: translate(-105%, 0px);
+    top: 78%;
+
+}
+
+#tipsButtonRight {
+    height: 70px;
+    width: 270px;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-image: url("../img/professional.jpg");
+    background-repeat: no-repeat;
+    background-position: left;
+    display: inline-block;
+    border-radius: 10px;
+    clip-path: polygon(0 0, 25% 0, 25% 99%, 0 100%);
+    position: absolute;
+    right: 66%;
+    transform: translate(105%, 0px);
+    top: 78%;
+
+}
+
+.buttonAnimate:hover {
+    animation-name: tipsAnimate;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+
+#thirdColumn, col-5{
+    min-width:500px;
+}
+
+#menu {
+    min-width: 500px;
+    z-index: 2;
+    position: fixed;
+
+}
+
+#menu a {
+    display: inline-block;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    position: fixed;
+    top: 1%;
+    text-decoration: none;
+    text-shadow: 0px 0px 20px rgb(236, 196, 17);
+}
+
+
+.col-8,
+.-col-2,
+.col-3,
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.col-8 {
+    padding-right: -50px;
+    display: flex;
+    justify-content: center;
+}
+
+#beginnerGallery {
+    background-image: radial-gradient(rgba(17, 107, 88, 0.5), rgb(255, 165, 0));
+    overflow: auto;
+    margin: 0;
+    padding: 2% 0 0 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+#professionalGallery {
+    padding-top: 5%;
+    background-image: url("../img/fluidbg.jpg");
+    opacity: 80%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 0px 100px;
+    overflow: hidden;
+}
+
+figure {
+
+    margin: 0;
+    padding: 1%;
+    position: relative;
+}
+
+
+figure img {
+    width: 100%;
+    padding: 1%;
+    box-shadow: 0px 0px 20px rgba(13, 7, 33, 0.4);
+
+}
+
+#beginnerGallery figure::before {
+    content: '';
+    width: 94%;
+    aspect-ratio: 1/1;
+    background-color: rgba(228, 180, 22, 0.4);
+    /*background-color: rgba(89, 255, 255, 0.2);*/
+    display: inline-block;
+    z-index: 1;
+    position: absolute;
+    top: 2%;
+
+}
+
+#professionalGallery figure::before {
+    content: '';
+    width: 94%;
+    aspect-ratio: 1/1;
+    background-color: rgba(46, 124, 101, 0.4);
+    /*background-color: rgba(89, 255, 255, 0.2);*/
+    display: inline-block;
+    z-index: 1;
+    position: absolute;
+    top: 2%;
+
+}
+
+
+
+@keyframes leftTopCircle {
+    0% {
+        clip-path: circle(141.4% at 0 0);
+    }
+
+    100% {
+
+        clip-path: circle(0.0% at 0 0);
+    }
+}
+
+@keyframes rightTopCircle {
+    0% {
+        clip-path: circle(141.4% at 100% 0);
+    }
+
+    100% {
+
+        clip-path: circle(0.0% at 100% 0);
+    }
+}
+
+@keyframes leftBottomCircle {
+    0% {
+        clip-path: circle(141.4% at 0 100%);
+    }
+
+    100% {
+
+        clip-path: circle(0.0% at 0 100%);
+    }
+}
+
+@keyframes rightBottomCircle {
+    0% {
+        clip-path: circle(141.4% at 100% 100%);
+    }
+
+    100% {
+
+        clip-path: circle(0.0% at 100% 100%);
+    }
+}
+
+
+
+
+@keyframes topRectangle {
+    0% {
+
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    100% {
+
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+}
+
+@keyframes bottomRectangle {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+    }
+
+    100% {
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+
+    }
+}
+
+
+
+
+.galleryRow1 figure:first-of-type:hover::before {
+    animation-name: leftTopCircle;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+
+}
+
+.galleryRow1 figure:nth-of-type(2):hover::before {
+    animation-name: topRectangle;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
+
+
+.galleryRow1 figure:nth-of-type(3):hover::before {
+    animation-name: rightTopCircle;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
+
+figure:first-of-type:hover::before {
+    animation-name: leftBottomCircle;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
+
+figure:nth-of-type(2):hover::before {
+    animation-name: bottomRectangle;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
+
+figure:nth-of-type(3):hover::before {
+    animation-name: rightBottomCircle;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}

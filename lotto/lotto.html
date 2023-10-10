@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lotto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Roboto:wght@700&display=swap');
+
+        .container-fluid {
+            background-image: url("./lottohatter_szn.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100vw;
+            height: 200vh;
+            margin: 0px;
+        }
+
+        #sorsolas {
+            position:fixed;
+            top: 30px;
+            left: 50%;
+            transform: translate(-50%, 0px);
+            width: 80%;
+            height: 40px;
+            padding: 0px;
+            z-index: 2;
+        }
+
+        #lottoszamok {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%, 0px);
+            width: 40%;
+          
+
+        }
+
+        #golyok td {
+
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            width: 50px;
+            height: 50px;
+
+        }
+
+
+        .grayscale {
+            filter: brightness(120%) blur(0.5px) grayscale(1);
+            opacity: 0.85;
+        }
+
+        .yellow {
+            color: #fce306;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 3px rgb(136, 134, 134);
+        }
+
+        #stat {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0px);
+            width: 80%;
+            margin: 33rem 0px 20px 0px;
+            padding: 20px;
+        }
+
+        #statTable {
+            margin: 20px 0px 20px 0px;
+            width: 95%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0px);
+            background-color: rgba(107, 165, 231, 0.5);
+        }
+
+        #taller1{
+            float:left;
+            position: absolute;
+            top: 30%;
+            left: 15%;
+            transform: translate(0px, -70%);
+            width:200px;
+          animation-name: forgatasJobbra;
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+          animation-timing-function:ease-in-out;
+        }
+
+        #taller2{
+            float:right;
+            position: absolute;
+            top: 30%;
+            left: 73%;
+            transform: translate(0px, -70%);
+            width:200px;
+            animation-name: forgatasBalra;
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+          animation-timing-function:ease-in-out;
+          
+        }
+
+        @keyframes forgatasJobbra{
+            
+            100%{
+                transform: rotate(180deg);
+            }
+            0%{
+                transform: rotate(-180deg);
+            }
+        }
+
+        @keyframes forgatasBalra{
+            100%{
+                transform: rotate(-180deg);
+            }
+            0%{
+                transform: rotate(180deg);
+            }
+        }
+
+
+        
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <button id="sorsolas" class="form-control btn btn-info yellow fw-bold">SORSOLÁS</button>
+            <div id="lottoszamok">
+                <table class="table table-borderless text-center align-middle fw-bold" id="golyok">
+                </table>
+            </div>
+<img src="./taller100.png" alt="Tallér" id="taller1">
+<img src="./taller100.png" alt="Tallér" id="taller2">
+            <div id="stat">
+                <table id="statTable" class="table table-bordered align-middle table-hover table-sm">
+                    <tr>
+                        <th>Statisztika</th>
+                        <th>Eredmény</th>
+                    </tr>
+                    <tr>
+                        <td>Mely számokat hányszor húzták ki:</td>
+                        <td id="elofordulas">0</td>
+                    </tr>
+                    <tr>
+                        <td>Mi volt a leggyakoribb és legritkább szám(ok):</td>
+                        <td id="gyakorisag">0</td>
+                    </tr>
+                    <tr>
+                        <td>Legnagyobb és a legkisebb TERJEDELEM</td>
+                        <td id="terjedelem">0</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        let osszesSorsolas = [];
+        let terjedelemTomb=[];
+        for (let i = 0; i <= 90; i++) {
+            osszesSorsolas.push(0);
+        }
+
+        sorsolas.addEventListener("click", () => {
+            lottoszamGenerator();
+            elofordulasok();
+            gyakorisagok();
+            terjedelemVizsgalat();
+        });
+
+        function lottoballRajzolo() {
+            let tabla = document.querySelector("#golyok");
+            for (let i = 0; i < 9; i++) {
+                let sor = tabla.insertRow();
+                for (let j = 1; j <= 10; j++) {
+                    let cella = sor.insertCell();
+                    let id = (i * 10) + j;
+                    cella.setAttribute("id", `g${id}`);
+                    cella.style.backgroundImage = `url('./${i}.png')`;
+                    cella.classList.add("grayscale");
+                    cella.innerText = id;
+
+                }
+
+            }
+
+
+        }
+
+        lottoballRajzolo();
+
+        function lottoszamGenerator() {
+            let lottoszamok = [];
+            let generaltSzam = 0;
+
+            while (lottoszamok.length < 5) {
+                generaltSzam = Math.round(Math.random() * (89)) + 1;
+                if (lottoszamok.length == 0) { lottoszamok[0] = generaltSzam; }
+                else if (!lottoszamok.includes(generaltSzam)) {
+                    lottoszamok.push(generaltSzam);
+                }
+            }
+            let rendezettTomb=lottoszamok.sort((a, b) => a - b);
+            terjedelemTomb.push(rendezettTomb[4]-rendezettTomb[0]);
+            return golyoSzinezo(lottoszamok);
+        }
+
+        function golyoSzinezo(tomb) {
+            let cellak = document.querySelectorAll("td");
+            for (let i = 0; i < cellak.length; i++) {
+                cellak[i].classList.add("grayscale");
+
+            }
+            for (let i = 0; i < tomb.length; i++) {
+                let sorsoltNum = tomb[i];
+                let cella = document.querySelector(`#g${sorsoltNum}`);
+                cella.classList.remove("grayscale");
+                osszesSorsolas[sorsoltNum]++;
+            }
+        }
+
+
+        //Szorgalmi: 
+        //Készíts statisztikát
+        //1. Eddig mely számokat hányszor húzták ki.
+        function elofordulasok() {
+            let szoveg = "";
+            osszesSorsolas.forEach((item, index, osszesSorsolas) => (item > 0) ? szoveg = szoveg + `${index} : ${item}, ` : item);
+            document.querySelector("#elofordulas").innerText = szoveg;
+        }
+
+
+
+        //2. Mi volt a leggyakoribb és a legkevesbé gyakori szám
+        function gyakorisagok() {
+            let leggyakoribb = [];
+            let legritkabb = [];
+            let max = Math.max(...osszesSorsolas);
+            let min = Math.min(...osszesSorsolas) + 1;
+            osszesSorsolas.forEach((item, index, osszesSorsolas) => (item == max) ? leggyakoribb.push(index) : item);
+            osszesSorsolas.forEach((item, index, osszesSorsolas) => (item == min) ? legritkabb.push(index) : item);
+            document.querySelector("#gyakorisag").innerHTML = `Leggyakoribb szám(ok) ${max} előfordulással: ${leggyakoribb.join(",")}` + "<br>" + `Legritkább szám(ok) ${min} előfordulással: ${legritkabb.join(",")}`;
+        }
+
+        //3. Melyik volt a legnagyobb és a legkisebb TERJEDELEM a húzott számokban(TERJEDELEM: A legnagyobb és a legkisebb elem különbsége!)
+
+        function terjedelemVizsgalat() {
+            let terjedelmek=terjedelemTomb.sort((a, b) => a - b);
+            document.querySelector("#terjedelem").innerText= `Legkisebb terjedelem: ${terjedelmek[0]}, Legnagyobb terjedelem: ${terjedelmek[terjedelmek.length-1]}`;
+
+        }
+
+        /* Régi kódom, lentebbi jobb
+                        function lottoszamGenerator(){
+                            let lottoszamok=[];
+                            let generaltSzam=0;
+                            
+                            for (let i=0; i<=4;i++){
+                                let talalt=false;
+                                generaltSzam=Math.round( Math.random() * (90-1))+1;
+                                if (lottoszamok.length==0) {lottoszamok[0]=generaltSzam}
+                                else {
+                                    for (let j=0; j<lottoszamok.length;j++){
+                                        if (lottoszamok[j]==generaltSzam){
+                                            talalt=true;
+                                        }
+                                        else {talalt=false}//ez nem is kell igazából...
+                                        
+                                    }
+                                    if (!talalt){ lottoszamok.push(generaltSzam)}
+                                    else { i-- }//EZ nagyon kell, küólönben kevesebb számot fog push-olni.
+                                }
+                            }
+                            return lottoszamok;
+                        }
+                
+                */
+
+        /*
+        function tombKiiro(tomb){
+                let szamkiiro=document.querySelector("#lottoszamok");
+                let szoveg="";
+                for (let i=0; i<5;i++){
+                    szoveg=szoveg+tomb[i]+",";
+                    
+                }
+                szamkiiro.innerText=szoveg;
+            }
+            tombKiiro(lottoszamGenerator());
+        
+        */
+        /*
+        Tanár megoldásai:
+    
+        //Negyedik verzió
+    //Megoldás WHILE ciklussal
+    function OtosLottoszamGeneratorV4() {
+        let lottoSzamok = [];
+        while (lottoSzamok.length < 5) {
+            let generaltSzam = Math.round(Math.random() * 89) + 1;
+            let szerepelE = false;
+    
+            for (let j = 0; j < lottoSzamok.length; j++) {
+                if (generaltSzam == lottoSzamok[j]) {
+                    szerepelE = true;
+                }
+    
+            }
+            if (szerepelE == false) {
+                lottoSzamok.push(generaltSzam);
+            }
+        }
+        return lottoSzamok;
+    }
+    
+    document.write("<hr>WHILE ciklus: ");
+    document.write(OtosLottoszamGeneratorV4());
+    
+    
+    //Érdekesség AI generálta kód
+    //Megadott input szöveg: "random numbers 0-90 without repeat in javascript"
+    //Vélemény: picit bugos a "vége" :)
+    function OtosLottoszamGeneratorV5(){
+        const generatedNumbers = [];
+        while (generatedNumbers.length < 5) {
+            const randomNumber = Math.floor(Math.random() * 91);
+            if (!generatedNumbers.includes(randomNumber)) {
+                generatedNumbers.push(randomNumber);
+            }
+        }
+        return generatedNumbers;
+    }
+    
+    document.write("<hr>AI: ");
+    document.write(OtosLottoszamGeneratorV5());
+        */
+
+
+
+
+    </script>
+</body>
+
+</html>

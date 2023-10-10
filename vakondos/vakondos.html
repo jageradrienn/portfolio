@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vakondos játék</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+            margin:0px;
+            padding:0px;
+        }
+
+        html{
+            cursor:url("./hammerup.png"), auto;
+        }
+
+        #vakond{
+            position: absolute;
+            top: 50%;
+            left: 47%;
+        }
+
+        /*Számáló elem formázása*/
+        #szamlalo{
+            color:white;
+            position: fixed;
+            top:0px; 
+            left:50%;
+            width:50px;
+            transform:translate(-25px);
+            text-align: center;
+            background-color: rgba(0,0,0,0.9);
+            border-bottom-left-radius:20px;
+            border-bottom-right-radius:20px;
+        }
+
+        #jatekter{
+            width:0px;
+            height:0px;
+            border: 2px solid black;
+            position:absolute;
+            top:10%;
+            left:50%;
+            transform: translate(-50%);
+           
+        }
+    </style>
+</head>
+<body>
+    <div id="jatekter">
+    <div id="vakond"><img src="./mole.png" alt="vakond"></div>
+    </div>
+    <!--Számláló létrehozás-->
+    <div id="szamlalo">0</div>
+    
+
+    <script>
+
+
+        let jatekterSzelesseg=window.innerWidth*0.9;
+        let jatekterMagassag=window.innerHeight*0.8;
+        let jatekter=document.querySelector("#jatekter");
+        jatekter.style.width=jatekterSzelesseg+"px";
+        jatekter.style.height=jatekterMagassag+"px";
+        let vakondocska=document.querySelector("#vakond");
+        vakond.addEventListener("click",utes);
+
+        function utes(){
+           document.querySelector("html").style.cursor="url('./hammerdown.png'), default";
+           vakondocska.innerHTML="<img src='./hole.png' alt='vakond'>"
+           setTimeout(() => ugras(), 100);     
+        }
+
+        function ugras(){
+            let randomTopErtek=Math.round(Math.random()*(jatekterMagassag-jatekter.offsetTop))+jatekter.offsetTop-100;
+            let randomLeftErtek=Math.round(Math.random()*(jatekterSzelesseg-jatekter.offsetLeft))+jatekter.offsetLeft-100;
+            vakondocska.style.top=randomTopErtek+"px";
+            vakondocska.style.left=randomLeftErtek+"px";
+            vakondocska.firstChild.setAttribute("src","./mole.png");
+            document.querySelector("html").style.cursor="url('./hammerup.png'), default";
+             //Számláló módosítása:
+            let klikkSzam=Number(document.querySelector("#szamlalo").innerHTML)+1;
+            document.querySelector("#szamlalo").innerHTML=klikkSzam;
+            
+        }
+    </script>
+</body>
+</html>

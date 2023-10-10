@@ -1,0 +1,130 @@
+/*https://neumorphism.io/*/
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding:0px;
+}
+
+body{
+    width:100vw;
+    height: 100vh;
+    padding:20px;
+}
+
+#main{
+    
+    padding:20px;
+    border: 2px solid rgb(119, 119, 119);
+    background-image: linear-gradient(15deg, rgba(218, 216, 216, 0.8), rgba(224, 224, 224, 0.3) 70.71%);   
+    border-radius: 20px;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+
+h5{
+    color:rgba(15, 102, 233, 0.61);
+}
+
+#leftSection{
+    height:90vh;
+}
+
+#kod{
+    width: 37vw;
+    min-width:435px;
+    height: 83vh;
+    padding:10px;
+    background-color: rgb(242, 243, 245);
+    border: 1px solid rgb(119, 119, 119);
+    border-radius: 5px;
+    margin-top:15px auto 0px auto;
+}
+
+
+table{
+    padding:20px;
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow:  10px 10px 60px #c5c5c5,
+             0px -5px 60px #ffffff;
+}
+
+table tr td:first-child{
+    padding-left:25px;
+}
+
+table tbody{
+    padding: 25px 0px 25px 0px;
+}
+
+#examples{
+    height: 40%;
+    width: 100%;
+    padding:20px 30px 20px 30px;
+    background-color: rgb(242, 243, 245);
+    border: 1px solid rgb(119, 119, 119);
+    border-radius: 5px;
+}
+
+#testTable{
+    background-color: rgb(242, 243, 245);
+    border: 1px solid rgb(119, 119, 119);
+    border-radius: 5px;
+    background: none;
+    box-shadow: none;
+    width:400px;
+    margin:5px auto 15px auto;
+    padding:10px;
+
+    
+}
+
+#testTable p{
+    margin:0px; 
+ }
+
+#results{
+    width: 100%;
+    height: 9vh;
+    padding:25px;
+    background-color: rgb(242, 243, 245);
+    border: 1px solid rgb(119, 119, 119);
+    border-radius: 5px;
+}
+
+
+
+#pelda{
+    color:rgba(15, 102, 233, 0.61);
+    font-style: italic;
+    margin-left:1rem;
+}
+
+#peldaFgv{
+    color:rgba(15, 102, 233, 0.61);
+    font-weight: bold;
+}
+
+#beirtTest{
+    display:none;
+}
+
+.btn-primary{
+    background-color: rgba(15, 102, 233, 0.61);;
+    border-color:rgba(15, 102, 233, 0.61);
+    box-shadow: 4px 4px 10px rgb(199, 199, 199);
+}
+
+#results input{
+    width:4rem;
+}
+
+input[type=radio]{
+    width:1.2rem;
+    height:1.2rem;
+}
+
+p{
+    margin-bottom:10px;
+}
